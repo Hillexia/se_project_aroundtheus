@@ -34,6 +34,9 @@
   height: 24px;
   width: 24px;
   grid-area: button;
+  border-style: none;
+  align-self: center;
+  padding: 0;
 }
 
 .profile__add-button {
@@ -41,6 +44,7 @@
   height: 50px;
   width: 150px;
   margin-left: auto;
+  border-style: none;
 }
 
 .profile__image {
