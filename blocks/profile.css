@@ -41,8 +41,7 @@
 .profile__edit-button {
   background: transparent url(../images/edit_button_regular.svg) center
     no-repeat;
-  border: 2px solid #fff;
-  border-radius: 2px;
+  border: 1px solid #fff;
   height: 24px;
   width: 24px;
   grid-area: button;
