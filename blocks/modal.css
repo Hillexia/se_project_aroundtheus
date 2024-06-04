@@ -34,6 +34,12 @@
   top: -45px;
   right: -45px;
   cursor: pointer;
+  transition: ease 0.4s;
+}
+
+.modal__close:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 .modal__heading {
@@ -80,6 +86,12 @@
   line-height: 21.78px;
   margin-top: 19px;
   padding-top: 0;
+  transition: ease 0.4s;
+}
+
+.modal__button:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 595px) {
