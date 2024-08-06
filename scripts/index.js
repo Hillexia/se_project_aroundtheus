@@ -29,6 +29,7 @@ const initialCards = [
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditClose = document.querySelector("#profile-edit-close");
 const addNewCardButton = document.querySelector(".profile__add-button");
+const newCardCloseButton = document.querySelector("#add-card-close");
 
 // Elements
 
@@ -57,6 +58,7 @@ function openModal(modal) {
 
 function closePopup() {
   profileEditModal.classList.remove("modal_opened");
+  addCardModal.classList.remove("modal_opened");
 }
 
 function getCardElement(cardData) {
@@ -91,6 +93,10 @@ profileEditForm.addEventListener("submit", (e) => {
 
 addNewCardButton.addEventListener("click", () => {
   openModal(addCardModal);
+});
+
+newCardCloseButton.addEventListener("click", () => {
+  closePopup();
 });
 
 // loops
