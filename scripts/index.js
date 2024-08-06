@@ -24,12 +24,15 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
   },
 ];
+// Buttons
+
+const profileEditButton = document.querySelector("#profile-edit-button");
+const profileEditClose = document.querySelector("#profile-edit-close");
+const addNewCardButton = document.querySelector("#add-card-modal");
 
 // Elements
 
-const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
-const profileEditClose = document.querySelector("#profile-edit-close");
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
@@ -37,11 +40,20 @@ const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
 const profileEditForm = profileEditModal.querySelector(".modal__form");
+const addCardModal = document.querySelector("#add-card-modal");
+const addCardTitle = addCardModal.querySelector(".modal__form");
+
+// Cards
+
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
 // Functions
+
+function openModal(modal) {
+  modal.classList.add("modal_opened");
+}
 
 function closePopup() {
   profileEditModal.classList.remove("modal_opened");
@@ -76,6 +88,12 @@ profileEditForm.addEventListener("submit", (e) => {
   profileDescription.textContent = profileDescriptionInput.value;
   closePopup();
 });
+
+addNewCardButton.addEventListener("click", () => {
+  openModal(addCardModal);
+});
+
+// loops
 
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
