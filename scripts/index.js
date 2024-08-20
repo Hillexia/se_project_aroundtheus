@@ -30,6 +30,7 @@ const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditClose = document.querySelector("#profile-edit-close");
 const addNewCardButton = document.querySelector(".profile__add-button");
 const newCardCloseButton = document.querySelector("#add-card-close");
+const imageClose = document.querySelector("#popup-close");
 
 // Elements
 
@@ -48,6 +49,7 @@ const cardTitleInput = profileAddCardForm.querySelector(
   ".modal__input_type_title"
 );
 const cardUrlInput = profileAddCardForm.querySelector(".modal__input_type_url");
+const imageModal = document.querySelector("#image-popup");
 
 // Cards
 
@@ -64,6 +66,7 @@ function openModal(modal) {
 function closePopup() {
   profileEditModal.classList.remove("modal_opened");
   addCardModal.classList.remove("modal_opened");
+  imageModal.classList.remove("modal_opened");
 }
 
 function getCardElement(cardData) {
@@ -72,14 +75,28 @@ function getCardElement(cardData) {
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
+  const deleteButton = cardElement.querySelector(".card__delete-button");
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
   });
 
+  deleteButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
+
   cardTitleEl.textContent = cardData.name;
   cardImageEl.src = cardData.link;
   cardImageEl.alt = cardData.name;
+
+  cardElement.addEventListener("click", () => {
+    const modalImageElement = imageModal.querySelector(".popup__image");
+    const modalCaption = imageModal.querySelector(".popup__caption");
+    modalImageElement.src = cardImageEl.src;
+    modalCaption.textContent = cardImageEl.alt;
+    openModal(imageModal);
+  });
+
   return cardElement;
 }
 
@@ -120,6 +137,10 @@ addNewCardButton.addEventListener("click", () => {
 });
 
 newCardCloseButton.addEventListener("click", () => {
+  closePopup();
+});
+
+imageClose.addEventListener("click", () => {
   closePopup();
 });
 
