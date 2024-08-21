@@ -99,6 +99,32 @@
   cursor: pointer;
 }
 
+.modal__container_type_image {
+  background: none;
+  padding: 0;
+  max-height: 75vh;
+  max-width: 75vw;
+  width: auto;
+  display: flex;
+}
+
+.modal__image {
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.modal__caption {
+  position: absolute;
+  color: white;
+  left: 0;
+  top: calc(100% + 10px);
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.52px;
+}
+
 @media screen and (max-width: 595px) {
   .modal__close {
     height: 26px;
