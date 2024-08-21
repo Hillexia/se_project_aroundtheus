@@ -126,6 +126,8 @@ profileAddCardForm.addEventListener("submit", (e) => {
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
   closePopup(addCardModal);
+  cardTitleInput.value = "";
+  cardUrlInput.value = "";
 });
 
 addNewCardButton.addEventListener("click", () => {
