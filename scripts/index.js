@@ -109,7 +109,6 @@ function renderCard(cardData, wrapper) {
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
-  profileEditModal.classList.add("modal_opened");
   openModal(profileEditModal);
 });
 
