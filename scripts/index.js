@@ -104,6 +104,21 @@ function renderCard(cardData, wrapper) {
   wrapper.prepend(cardElement);
 }
 
+function handleEscape(evt) {
+  if (evt.key === "Escape") {
+    const openModal = document.querySelector(".modal_opened");
+    closePopup(openModal);
+  }
+}
+document.addEventListener("keydown", handleEscape);
+
+function handleCloseOverlay(evt) {
+  if (evt.target.classList.contains("modal_opened")) {
+    closePopup(evt.target);
+  }
+}
+document.addEventListener("click", handleCloseOverlay);
+
 // Event Listeners
 
 profileEditButton.addEventListener("click", () => {
