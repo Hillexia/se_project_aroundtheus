@@ -82,6 +82,28 @@
   border-bottom: 1px solid red;
 }
 
+.modal__error-top {
+  position: absolute;
+  font-family: Inter, Arial, sans-serif;
+  color: red;
+  font-size: 12px;
+  line-height: 14.5px;
+  margin: 32px 0;
+}
+
+.modal__error-bottom {
+  position: absolute;
+  font-family: Inter, Arial, sans-serif;
+  color: red;
+  font-size: 12px;
+  line-height: 14.5px;
+  margin: 94px 0;
+}
+
+.modal__error_visible {
+  visibility: visible;
+}
+
 .modal__button {
   background-color: #000;
   color: #fff;
@@ -130,17 +152,6 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 14.52px;
-}
-
-.modal__error {
-  font-family: Inter, Arial, sans-serif;
-  color: red;
-  font-size: 12px;
-  line-height: 14.5px;
-}
-
-.modal__error_visible {
-  visibility: visible;
 }
 
 @media screen and (max-width: 595px) {

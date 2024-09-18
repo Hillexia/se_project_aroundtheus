@@ -63,10 +63,12 @@ const cardTemplate =
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscape);
 }
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscape);
 }
 
 function getCardElement(cardData) {
@@ -110,7 +112,6 @@ function handleEscape(evt) {
     closePopup(openModal);
   }
 }
-document.addEventListener("keydown", handleEscape);
 
 function handleCloseOverlay(evt) {
   if (evt.target.classList.contains("modal_opened")) {

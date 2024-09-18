@@ -58,7 +58,7 @@
             minlength="2"
             required
           />
-          <span class="modal__error" id="profile-title-input-error"></span>
+          <span class="modal__error-top" id="profile-title-input-error"></span>
           <input
             class="modal__input"
             type="text"
@@ -70,7 +70,7 @@
             required
           />
           <span
-            class="modal__error"
+            class="modal__error-bottom"
             id="profile-description-input-error"
           ></span>
           <button type="submit" class="modal__button">Save</button>
@@ -93,16 +93,19 @@
             minlength="1"
             required
           />
-          <span class="modal__error" id="add-card-title-input-error"></span>
+          <span class="modal__error-top" id="add-card-title-input-error"></span>
           <input
             class="modal__input modal__input_type_url"
-            type="text"
+            type="url"
             name="URL"
             placeholder="Image URL"
             id="add-card-url-input"
             required
           />
-          <span class="modal__error" id="add-card-url-input-error"></span>
+          <span
+            class="modal__error-bottom"
+            id="add-card-url-input-error"
+          ></span>
           <button type="submit" class="modal__button">Save</button>
         </form>
       </div>
