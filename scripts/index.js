@@ -118,7 +118,6 @@ function handleCloseOverlay(evt) {
     closePopup(evt.target);
   }
 }
-document.addEventListener("click", handleCloseOverlay);
 
 // Event Listeners
 
@@ -159,6 +158,10 @@ newCardCloseButton.addEventListener("click", () => {
 
 imageClose.addEventListener("click", () => {
   closePopup(imageModal);
+});
+
+[profileEditModal, addCardModal, imageModal].forEach((modal) => {
+  modal.addEventListener("click", handleCloseOverlay);
 });
 
 // loops
